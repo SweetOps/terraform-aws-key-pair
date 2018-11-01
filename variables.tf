@@ -13,6 +13,12 @@ variable "name" {
   description = "Application or solution name (e.g. `app`)"
 }
 
+variable "environment" {
+  type        = "string"
+  default     = ""
+  description = "Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT'"
+}
+
 variable "delimiter" {
   type        = "string"
   default     = "-"
@@ -63,4 +69,9 @@ variable "chmod_command" {
   type        = "string"
   default     = "chmod 600 %v"
   description = "Template of the command executed on the private key file"
+}
+
+variable "bucket" {
+  default     = ""
+  description = "Name of S3 bucket on which will be uploaded keys"
 }
